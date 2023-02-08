@@ -9,13 +9,21 @@ if [ "$ID" -ne 0 ]; then
    exit 1
 fi
 
+
+log=/tmp/stack.log
+
+stat() {
+    if [ $1 -eq 0 ]; then
+   echo "[32m success[0m"
+    else
+    echo "[31m success[0m"
+    fi
+}
+
+
 echo -n "Installing Webserver: "
-yum install httpd -y &> /tmp/stack.log
-if [ $? -eq 0 ]; then
-   echo "success"
-else
-    echo "fail"
-fi
+yum install httpd -y &> $log
+stat $1
 
 
 
