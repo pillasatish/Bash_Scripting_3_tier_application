@@ -8,7 +8,7 @@ if [ "$ID" -ne 0 ]; then
    echo "you need to be root user"
    exit 1
 fi
-
+yum install httpd -y
 
 
 
