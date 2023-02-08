@@ -8,7 +8,15 @@ if [ "$ID" -ne 0 ]; then
    echo "you need to be root user"
    exit 1
 fi
-yum install httpd -y
+
+echo -n "Installing Webserver"
+yum install httpd -y &> /tmp/stack.log
+if [ $? -ne 0 ]; then
+   echo "success"
+else
+    echo "fail"
+   exit 1
+fi
 
 
 
