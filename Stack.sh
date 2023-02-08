@@ -9,7 +9,7 @@ if [ "$ID" -ne 0 ]; then
    exit 1
 fi
 
-echo -n "Installing Webserver"
+echo -n "Installing Webserver: "
 yum install httpd -y &> /tmp/stack.log
 if [ $? -eq 0 ]; then
    echo "success"
