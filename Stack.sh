@@ -11,11 +11,10 @@ fi
 
 echo -n "Installing Webserver"
 yum install httpd -y &> /tmp/stack.log
-if [ $? -ne 0 ]; then
+if [ $? -eq 0 ]; then
    echo "success"
 else
     echo "fail"
-   exit 1
 fi
 
 
